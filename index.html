@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación con AniJS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <script src="anim.js"></script>
+<div class="container">
+        <div class="status">✅ Sistema de animaciones cargado correctamente</div>
+        
+        <h1 data-anijs="if: load, do: bounceIn">✨ Animaciones ✨</h1>
+
+        <!-- Ejemplo 1: Click en botón -->
+        <div class="card" data-anijs="if: load, do: fadeInUp">
+            <h2 class="section-title">1. Animación al hacer Click</h2>
+            <button class="btn" data-anijs="if: click, do: tada">
+                ¡Haz Click Aquí!
+            </button>
+            <div class="info">
+                <code>data-anijs="if: click, do: tada"</code>
+            </div>
+        </div>
+
+        <!-- Ejemplo 2: Hover -->
+        <div class="card" data-anijs="if: load, do: fadeInUp">
+            <h2 class="section-title">2. Animación al pasar el mouse (Hover)</h2>
+            <div class="box" data-anijs="if: mouseover, do: pulse">
+                Pasa el mouse
+            </div>
+            <div class="info">
+                <code>data-anijs="if: mouseover, do: pulse"</code>
+            </div>
+        </div>
+
+        <!-- Ejemplo 3: Múltiples elementos -->
+        <div class="card" data-anijs="if: load, do: fadeInUp">
+            <h2 class="section-title">3. Animar otros elementos</h2>
+            <button class="btn" id="trigger-btn" data-anijs="if: click, on: #target-box, do: flip">
+                Animar Caja
+            </button>
+            <div class="box" id="target-box">
+                Objetivo
+            </div>
+            <div class="info">
+                <code>data-anijs="if: click, on: #target-box, do: flip"</code>
+            </div>
+        </div>
+
+        <!-- Ejemplo 4: Emojis interactivos -->
+        <div class="card" data-anijs="if: load, do: fadeInUp">
+            <h2 class="section-title">4. Emojis Animados</h2>
+            <div class="demo-area">
+                <span class="emoji-box" data-anijs="if: click, do: bounceIn">🎉</span>
+                <span class="emoji-box" data-anijs="if: click, do: rotateIn">⭐</span>
+                <span class="emoji-box" data-anijs="if: click, do: heartBeat">❤️</span>
+                <span class="emoji-box" data-anijs="if: click, do: rubberBand">🚀</span>
+            </div>
+            <div class="info">
+                ¡Haz click en los emojis para verlos animarse!
+            </div>
+        </div>
+
+        <!-- Ejemplo 5: Scroll -->
+        <div class="card" data-anijs="if: scroll, do: zoomIn">
+            <h2 class="section-title">5. Animación al hacer Scroll</h2>
+            <p>Esta tarjeta se animó cuando hiciste scroll hasta ella</p>
+            <div class="info">
+                <code>data-anijs="if: scroll, do: zoomIn"</code>
+            </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="card" data-anijs="if: load, do: fadeIn">
+            <h2 class="section-title">📚 Sintaxis de AniJS</h2>
+            <p><strong>Estructura básica:</strong></p>
+            <code>data-anijs="if: [EVENTO], do: [ANIMACIÓN]"</code>
+            
+            <p style="margin-top: 15px;"><strong>Eventos comunes:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><code>click</code> - Al hacer click</li>
+                <li><code>mouseover</code> - Al pasar el mouse</li>
+                <li><code>scroll</code> - Al hacer scroll</li>
+                <li><code>load</code> - Al cargar la página</li>
+            </ul>
+
+            <p style="margin-top: 15px;"><strong>Animaciones populares (Animate.css):</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><code>bounce, flash, pulse, rubberBand, shake, swing, tada, wobble</code></li>
+                <li><code>bounceIn, fadeIn, flipInX, rotateIn, zoomIn</code></li>
+                <li><code>slideInUp, slideInDown, slideInLeft, slideInRight</code></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
